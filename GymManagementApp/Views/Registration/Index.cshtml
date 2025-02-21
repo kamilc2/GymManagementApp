@@ -1,0 +1,32 @@
+﻿@{
+    ViewData["Title"] = "Rejestracja użytkownika siłowni";
+}
+
+<h2>Rejestracja użytkownika siłowni</h2>
+
+@using (Html.BeginForm("Register", "Registration", FormMethod.Post))
+{
+    <div class="form-group">
+        @Html.Label("Adres email:")
+        @Html.TextBox("email", "Twój adres email", new { @class = "form-control" })
+    </div>
+
+    <div class="form-group">
+        @Html.Label("Wiek:")
+        @Html.TextBox("age", 18, new { @class = "form-control", @type = "number" })
+    </div>
+
+    <div class="form-group">
+        @Html.Label("Zgoda na regulamin:")
+        @Html.CheckBox("consent")
+    </div>
+
+    <button type="submit" class="btn btn-primary mt-2">Zarejestruj</button>
+}
+
+@if (ViewBag.Message != null)
+{
+    <div class="alert alert-info mt-3">
+        @ViewBag.Message
+    </div>
+}

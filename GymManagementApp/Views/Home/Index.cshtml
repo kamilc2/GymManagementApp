@@ -1,0 +1,15 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome to Gym Management System</h1>
+    <p>Your last visit: @ViewData["LastVisit"]</p>
+</div>
+
+
+@Html.ActionLink("Adam", "Index", "Home", new { Name = "Adam" }, new { @class = "btn btn-primary m-1" })
+@Html.ActionLink("Ewa", "Index", "Home", new { Name = "Ewa" }, new { @class = "btn btn-primary m-1" })
+@Html.ActionLink("Karol", "Index", "Home", new { Name = "Karol" }, new { @class = "btn btn-primary m-1" })
+@Html.ActionLink("Marta", "Index", "Home", new { Name = "Marta" }, new { @class = "btn btn-primary m-1" })
+

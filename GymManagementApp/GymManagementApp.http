@@ -1,0 +1,105 @@
+﻿@GymManagementApp_HostAddress = https://localhost:7163/api/trainer
+
+
+
+
+POST {{GymManagementApp_HostAddress}}/api/trainer
+Content-Type: application/json
+
+{
+  //TrainerEntity{
+  "name": "Jan Kowalski",
+  "specialization": "Fitness",
+  "workoutClasses": [
+    {
+      "id": 1,
+      "name": "Cardio Training",
+      "schedule": "2024-03-01T10:00:00"
+    }
+  ]
+}
+
+
+###
+
+POST {{GymManagementApp_HostAddress}}/api/trainerentity
+Content-Type: application/json
+
+POST {{GymManagementApp_HostAddress}}/api/trainer
+Content-Type: application/json
+
+{
+    "name": "Jan Kowalski",
+    "specialization": "Fitness",
+    "workoutClasses": [
+        {
+            "id": 1,
+            "name": "Cardio Training",
+            "schedule": "2024-03-01T10:00:00"
+        }
+    ]
+}
+
+
+###
+
+POST {{GymManagementApp_HostAddress}}/api/trainerentity
+Content-Type: application/json
+
+{
+  //TrainerEntity
+}
+
+###
+
+POST {{GymManagementApp_HostAddress}}/api/trainerentity
+Content-Type: application/json
+
+{
+  //TrainerEntity
+}
+
+###
+
+GET {{GymManagementApp_HostAddress}}/api/trainerentity
+
+###
+### Pobranie wszystkich trenerów
+GET {{GymManagementApp_HostAddress}}/api/trainer
+Content-Type: application/json
+
+### Pobranie trenera po ID
+GET {{GymManagementApp_HostAddress}}/api/trainer/1
+Content-Type: application/json
+
+### Dodanie nowego trenera
+POST {{GymManagementApp_HostAddress}}/api/trainer
+Content-Type: application/json
+
+{
+    "name": "Jan Kowalski",
+    "specialization": "Fitness",
+    "workoutClasses": [
+        {
+            "id": 1,
+            "name": "Cardio Training",
+            "schedule": "2024-03-01T10:00:00"
+        }
+    ]
+}
+
+### Modyfikacja trenera
+PUT {{GymManagementApp_HostAddress}}/api/trainer/1
+Content-Type: application/json
+
+{
+    "id": 1,
+    "name": "Updated Name",
+    "specialization": "Strength Training"
+}
+
+### Usunięcie trenera
+DELETE {{GymManagementApp_HostAddress}}/api/trainer/1
+Content-Type: application/json
+
+GET https://localhost:7163/api/trainer
